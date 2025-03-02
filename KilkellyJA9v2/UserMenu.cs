@@ -1,12 +1,27 @@
 
 using System.Collections;
 using System.Dynamic;
+using System.Runtime.CompilerServices;
 
 namespace KilkellyJA9v2;
 
+public enum ContactType
+{
+    Personal = 1,
+    Work = 2,
+    School = 3,
+    Other = 4
+}
+
+public struct entryDetail
+{
+    public string LastName;
+    public string FirstName;
+    public string PhoneNumber;
+    public ContactType ContactType;
+}
 
 public class UserMenu
-
 {
     public void getUserMenu()
     {
@@ -29,17 +44,16 @@ Enter 5 to exit the application";
         DeleteName = 4,
         Exit = 5
     }
-    string userSelection;
-
+    string? userSelection = Console.ReadLine();
     public Action GetUserAction()
     {
-        string? userSelection = Console.ReadLine();
+        //string? userSelection = Console.ReadLine();
         if (Enum.TryParse(userSelection, out Actions action))
         {
             switch (action)
             {
                 case Actions.AddName:
-                    Console.WriteLine($"selected: AddName");
+                    
                     break;
 
                 case Actions.ViewNames:
@@ -60,10 +74,9 @@ Enter 5 to exit the application";
             }
         }
         else
-        {
-            Console.WriteLine($"Input was not valid.");
-            getUserMenu();
+        {   ActionHandlers invalid = new ActionHandlers();
+            System.Action invalidAction = invalid.InvalidInput;
+            return invalidAction;
         }
     }
-
 }
