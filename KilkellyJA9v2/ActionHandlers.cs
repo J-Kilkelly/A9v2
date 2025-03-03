@@ -65,7 +65,7 @@ public class ActionHandlers
         {
             Enum contactType = contactTypeValue;
             entry = new EntryDetail(lastName, firstName, phoneNumber, contactTypeValue);
-            Console.WriteLine($"{entry.FirstName}");
+            Console.WriteLine($"{entry.FirstName}");//this works properly so the input data is getting into the struct
         }
         else
         {
