@@ -5,6 +5,9 @@ class Program
     static void Main(string[] args)
     {
         UserMenu userInput = new UserMenu();
-        userInput.getUserMenu();
+        userInput.getUserChoice();
+        PhoneBookAction bookAction = new PhoneBookAction();
+        bookAction.AddEntryToList(EntryDetail entry);
+        //bookAction.WriteToFile();
     }
 }
