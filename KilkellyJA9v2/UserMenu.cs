@@ -5,21 +5,6 @@ using System.Runtime.CompilerServices;
 
 namespace KilkellyJA9v2;
 
-public enum ContactType
-{
-    Personal = 1,
-    Work = 2,
-    School = 3,
-    Other = 4
-}
-
-public struct entryDetail
-{
-    public string LastName;
-    public string FirstName;
-    public string PhoneNumber;
-    public ContactType ContactType;
-}
 
 public class UserMenu
 {
@@ -57,19 +42,27 @@ Enter 5 to exit the application";
                     break;
 
                 case Actions.ViewNames:
-
+                    ActionHandlers holder2 = new ActionHandlers();
+                    System.Action myHolder2 = holder2.PlaceHolder;
+                    return myHolder2;
                     break;
 
                 case Actions.SearchNames:
-
+                    ActionHandlers holder3 = new ActionHandlers();
+                    System.Action myHolder3 = holder3.PlaceHolder;
+                    return myHolder3;
                     break;
 
                 case Actions.DeleteName:
-
+                    ActionHandlers holder4 = new ActionHandlers();
+                    System.Action myHolder4 = holder4.PlaceHolder;
+                    return myHolder4;
                     break;
 
                 case Actions.Exit:
-
+                    ActionHandlers holder5 = new ActionHandlers();
+                    System.Action myHolder5 = holder5.PlaceHolder;
+                    return myHolder5;
                     break;
             }
         }

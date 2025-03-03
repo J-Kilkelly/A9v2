@@ -59,6 +59,7 @@ public class ActionHandlers
         {
             Enum contactType = contactTypeValue;
             EntryDetail entry = new EntryDetail(lastName, firstName, phoneNumber, contactTypeValue);
+            return entry;
         }
         else
         {
