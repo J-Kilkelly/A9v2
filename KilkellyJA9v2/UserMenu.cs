@@ -19,16 +19,16 @@ public class UserMenu
 
         if (Enum.TryParse(userSelection, out Actions action))
         {
-            switch (action)
+            switch (action) //switch action is driven by user input of 1 to add name, 2 to view..etc
             {
-                case Actions.AddName:
+                case Actions.AddName: //call appropriate methods from the ActionHandlers class
                     ActionHandlers add = new ActionHandlers();
-                    add.GetUserInput();
+                    add.GetUserInput(); //this works
                     PhoneBookAction write = new PhoneBookAction();
-                    write.WriteToFile();
+                    write.WriteToFile(); //this does not work
                     break;
 
-                case Actions.ViewNames:
+                case Actions.ViewNames: //I hung-up on the first action and never got past it
                     
                     break;
 
@@ -52,7 +52,7 @@ public class UserMenu
         }
     }
 
-    public enum Actions
+    public enum Actions //enum for user-selected actions; used in SWITCH statment above
     {
         AddName = 1,
         ViewNames = 2,

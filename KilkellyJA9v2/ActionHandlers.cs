@@ -1,7 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using KilkellyJA9v2;
 
-public enum ContactType
+public enum ContactType //enum for contact type; this worked
 {
     Personal = 1,
     Work = 2,
@@ -9,7 +9,7 @@ public enum ContactType
     Other = 4
 }
 
-public struct EntryDetail
+public struct EntryDetail //struct for entry detail
 {
     public string LastName;
     public string FirstName;
@@ -34,7 +34,7 @@ public class ActionHandlers
         UserMenu menu = new UserMenu();
         menu.getUserChoice();
     }
-
+    //string is used below to write menu of contact-type options to the console
     string contactTypeMenu = @"
     Personal = 1,
     Work = 2,
@@ -43,7 +43,7 @@ public class ActionHandlers
 
     public string? entry;
 
-    public EntryDetail GetUserInput()
+    public EntryDetail GetUserInput() //this did work when called from Program.cs
     {
         Console.WriteLine("Enter Last Name: ");
         string? lastName = Console.ReadLine();
@@ -61,7 +61,7 @@ public class ActionHandlers
         string? contactTypeInput = Console.ReadLine();
         EntryDetail entry = default(EntryDetail);
         
-        if(Enum.TryParse(contactTypeInput, out ContactType contactTypeValue))
+        if(Enum.TryParse(contactTypeInput, out ContactType contactTypeValue)) //tried to put user input entered as string into struct
         {
             Enum contactType = contactTypeValue;
             entry = new EntryDetail(lastName, firstName, phoneNumber, contactTypeValue);
